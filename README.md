@@ -47,6 +47,10 @@ The simplest usage (since version 7.0) of the library would be as follows:
 require_once __DIR__ . '/vendor/autoload.php';
 
 $mpdf = new \Mpdf\Mpdf();
+//防止中文乱码
+$mpdf->autoLangToFont = true;
+$mpdf->autoScriptToLang = true;
+
 $mpdf->WriteHTML('<h1>Hello world!</h1>');
 $mpdf->Output();
 
